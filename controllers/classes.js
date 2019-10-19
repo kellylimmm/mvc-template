@@ -13,9 +13,13 @@ module.exports = (db) => {
   // };
 
   let indexControllerCallback = (request, response) => {
-      db.students.getAll((error, allStudents) => {
-        response.render('students/index', { allStudents });
-      });
+    var stuff =(error, allClases) => {
+            console.log(error);
+            console.log(allClases);
+        // response.render('classes/index', { allClases });
+          response.send(allClases);
+      }
+      db.classes.something(stuff);
   };
 
   /**

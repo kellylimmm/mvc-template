@@ -14,6 +14,7 @@ module.exports = (db) => {
 
   let indexControllerCallback = (request, response) => {
       db.students.getAll((error, allStudents) => {
+        console.log(allStudents);
         response.render('students/index', { allStudents });
       });
   };
